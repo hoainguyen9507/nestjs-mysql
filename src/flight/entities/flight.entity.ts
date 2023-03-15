@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { AirportEntity } from './airport.entity';
 
 @Entity('flight')
@@ -6,13 +6,13 @@ export class FlightEntity {
     @PrimaryGeneratedColumn('uuid', {name: 'id'})
     id: string;
 
-    @OneToOne(() => AirportEntity,{
+    @ManyToOne(() => AirportEntity,(departureAirport) => departureAirport.flights,{
         eager: true,
     })
     @JoinColumn({name: 'departure_airport', referencedColumnName: 'id'})
     departureAirport: AirportEntity
 
-    @OneToOne(() => AirportEntity, {
+    @ManyToOne(() => AirportEntity,(arrivalAirport) => arrivalAirport.flights, {
         eager: true,
     })
     @JoinColumn({name: 'arrival_airport', referencedColumnName: 'id'})

@@ -2,7 +2,7 @@ export class FlightDto {
     id: string;
     departureAirport: string;
     arrivalAirport: string;
-    departureDateTime: Date;
-    arrivalDateTime: Date;
+    departureDateTime: string;
+    arrivalDateTime: string;
     price: number;
 }

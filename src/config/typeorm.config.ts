@@ -11,4 +11,5 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     synchronize: true,
     autoLoadEntities: true,
     logging: true,
+    timezone: "Z",
 };
