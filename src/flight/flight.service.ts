@@ -38,9 +38,9 @@ export class FlightService {
     let flightDto = new FlightDto();
     flightDto.id = flight.id;
     flightDto.arrivalAirport = flight.arrivalAirport.airportName;
-    flightDto.arrivalDateTime = flight.arrivalDateTime;
+    flightDto.arrivalDateTime = flight.arrivalDateTime.toISOString();
     flightDto.departureAirport = flight.departureAirport.airportName;
-    flightDto.departureDateTime = flight.departureDateTime;
+    flightDto.departureDateTime = flight.departureDateTime.toISOString();
     flightDto.price = flight.price;
 
     return flightDto;
