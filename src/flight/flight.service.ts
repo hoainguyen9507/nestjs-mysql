@@ -38,11 +38,14 @@ export class FlightService {
     let flightDto = new FlightDto();
     flightDto.id = flight.id;
     flightDto.arrivalAirport = flight.arrivalAirport.airportName;
-    flightDto.arrivalDateTime = flight.arrivalDateTime.toISOString();
+    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+
+    var d = new Date();
+    flightDto.arrivalDateTime = d;
     flightDto.departureAirport = flight.departureAirport.airportName;
     flightDto.departureDateTime = flight.departureDateTime.toISOString();
     flightDto.price = flight.price;
-
     return flightDto;
   }
 }

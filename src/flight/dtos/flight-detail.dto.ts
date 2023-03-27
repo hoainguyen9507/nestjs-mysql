@@ -3,6 +3,6 @@ export class FlightDto {
     departureAirport: string;
     arrivalAirport: string;
     departureDateTime: string;
-    arrivalDateTime: string;
+    arrivalDateTime: Date;
     price: number;
 }
